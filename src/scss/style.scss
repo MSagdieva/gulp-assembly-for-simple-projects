@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:regular&display=swap&subset=cyrillic-ext");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,regular,600&display=swap&subset=cyrillic-ext");
+@import url('/src/scss/normalize.css');
+
+@import 'mixins/adaptive-value';
+
+$fontFamily:"Oswald";
+$SecondFontFamily: "Open Sans";
+
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 1110;
+$md1: $maxWidthContainer + 12;
+$md2: 992;
+$md3: 768;
+$md4: 480;
+// ---------------main-components-styles-----------------------//
+body{
+box-sizing: border-box;
+font-size: 20px;
+a{
+    text-decoration: none;
+    color: #fff;
+}
+//     @media (max-width: $md1+px) {
+//         font-size: 18px;
+//     }
+//     @media (max-width: $md2+px) {
+//         font-size: 16px;
+//     }
+//     @media (max-width: $md3+px) {
+//         font-size: 14px;
+//     }
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.section{
+margin: 150px 0 0 0;
+}
+.title {
+    font-family: $fontFamily;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+h2.title{
+    font-size: 30px;
+    display: inline-block;
+    line-height: 1.8;
+    margin: 0;
+    margin-left: 45px;
+    @media (max-width:$md3+px){
+        font-size: 20px;
+    }
+    @media (max-width:$md4+px){
+        text-align: center;
+        margin-left: 0;
+    }
+}
+.text {
+    font-family: $SecondFontFamily;
+    font-weight: 300;
+    line-height: 1.4;
+}
+.btn {
+    font-family: $SecondFontFamily;
+    font-weight: 600;
+    line-height: 22 / 16 * 100%;
+    text-transform: uppercase;
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+// ---------------container styles-----------------------//
+@import 'elements/container';
+
+// ---------------header styles-----------------------//
+@import 'elements/header';
+
+// ---------------menu styles-----------------------//
+@import 'elements/menu';
+
+// ---------------main page styles-----------------------//
+@import 'elements/heading';
+
+// ---------------sections styles-----------------------//
+
+@import 'elements/sections';
+
+// ---------------footer styles-----------------------//
+@import 'elements/footer';

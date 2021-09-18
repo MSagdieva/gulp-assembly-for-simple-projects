@@ -1,0 +1,67 @@
+.main-heading {
+            margin-top:-50px;
+            width: 100%;
+            top:0;
+            background: url("../img/main-heading.jpg");
+            background-size: cover;
+        @media (max-width:$md3+px) {
+            background-clip: content-box;
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+    &_btn {
+        position:absolute;
+        right:30px;
+        border: 2px solid rgba(255, 255, 255, 1);
+        @include adaptive-value('font-size', 22, 14, 0);
+        padding: 15px 40px;
+        @media (max-width:$md3+px) {
+            padding: 5px 10px;
+        }
+    }
+
+    &__container {
+        padding: 100px 20px;
+    }
+
+    &__content {
+        background: linear-gradient(90deg, rgba(0, 91, 193, 0.6), rgba(0, 91, 193, 0.6) 40%,  rgba(0, 0, 0, 0) 40%);
+        color: #fff;
+        height: 100%;
+        display:flex;
+        align-items: stretch;
+        @media (max-width: $md3+px) {
+            background: linear-gradient(90deg, rgba(0, 91, 193, 0.6), rgba(0, 91, 193, 0.6) 30%,  rgba(0, 0, 0, 0) 30%);
+        }
+        @media (max-width: $md4+px) {
+            background: linear-gradient(90deg, rgba(0, 91, 193, 0.6), rgba(0, 91, 193, 0.6) 60%,  rgba(0, 0, 0, 0) 60%);
+        }
+    }
+
+    &__block {
+        margin: 202px 0 0 140px;
+        @media (max-width: $md4+px) {
+            margin: 50px 0 0 20px;
+            width:100%;
+        }
+    }
+
+    &__title {
+        line-height: 1.5;
+        color:#fff;
+        text-align: center;
+        @include adaptive-value('font-size', 48, 38, 0);
+        text-transform: none;
+        margin:0;
+        @media (max-width: $md4+px) {
+            font-size: 30px;
+        }
+    }
+
+    &__text {
+        @include adaptive-value('font-size', 16, 14, 0);
+        // @media (max-width: $md4+px) {
+        // }
+    }
+}
