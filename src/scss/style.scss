@@ -46,17 +46,16 @@ margin: 150px 0 0 0;
     text-transform: uppercase;
 }
 h2.title{
-    font-size: 30px;
-    display: inline-block;
+    @include adaptive-value('font-size', 26, 18, 0);
+    display: block;
     line-height: 1.8;
-    margin: 0;
-    margin-left: 45px;
+    margin: 30px;
     @media (max-width:$md3+px){
-        font-size: 20px;
+        margin: 20px;
     }
     @media (max-width:$md4+px){
+        margin: 20px 0;
         text-align: center;
-        margin-left: 0;
     }
 }
 .text {

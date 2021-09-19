@@ -1,12 +1,18 @@
-.introduction {
+.section{
     margin-top: 30px;
-	&__information { }
+    &__header{
+    }
+}
+.introduction {
+	&__information { 
+        
+    }
 }
 .info-block__container { 
     display:flex;
     flex-wrap:wrap;
     .info-block { 
-        flex: 1.5 0.5 200px;
+        flex: 1.5 0.8 200px;
     
 
 }
@@ -21,15 +27,20 @@
 
 }
 .img-container { 
-    height: 180px;
+    position:relative;
+    padding: 0 0 50% 0;
     overflow: hidden;
 }
 .ill {
-    max-width: 100%;
+    position:absolute;
+    top:0;
+    left:0;
     object-fit: cover;
     object-position: top;
     width: 100%;
     height:100%;
+    min-width: 100px;
+    min-height: 100px;
 
 }
 .text-container { 
@@ -41,13 +52,30 @@
 .main_content{
     .info-block{
         display:flex;
+        @media (max-width: $md4+px){
+            flex-wrap: wrap;
+        }    
     }
     .img-container{
         margin-right: 30px;
         flex:1 0 200px;
+        padding: 0;
+        @media (max-width: $md4+px){
+            height: 200px;
+            margin-right: 0;
+        }
     }
+
     .info-block~.info-block{
         margin-top: 30px;
+        @media (max-width: $md4+px){
+            margin-top: 0px;
+        }
+    }
+    .ill{
+        @media (max-width: $md4+px){
+        position: static;
+    }
     }
 
 }

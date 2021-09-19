@@ -1,6 +1,6 @@
 .footer{
     &__content{
-        background-color: rgba(0, 91, 193, 1);
+        background-color: rgba(50, 154, 240, 1);
         color:#fff;
         font-family: $SecondFontFamily;
         font-weight: 300;
@@ -10,7 +10,7 @@
         hr.line{
             border-width: 0;
             height: 1px;
-            background-color: #fff;
+            background-color: rgb(168, 168, 168);
         }
     }
 

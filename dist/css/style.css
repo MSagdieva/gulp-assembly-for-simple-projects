@@ -31,11 +31,10 @@ ul {
 }
 
 h2.title {
-  font-size: 30px;
-  display: inline-block;
+  font-size: calc(18px + 8 * ((100vw - 320px) / 1600));
+  display: block;
   line-height: 1.8;
-  margin: 0;
-  margin-left: 45px;
+  margin: 30px;
 }
 
 .text {
@@ -176,7 +175,7 @@ h2.title {
   font-size: calc(14px + 2 * ((100vw - 320px) / 1600));
 }
 
-.introduction {
+.section {
   margin-top: 30px;
 }
 
@@ -186,7 +185,7 @@ h2.title {
 }
 
 .info-block__container .info-block {
-  flex: 1.5 0.5 200px;
+  flex: 1.5 0.8 200px;
 }
 
 .info-block__container .info-block ~ .info-block {
@@ -194,18 +193,23 @@ h2.title {
 }
 
 .img-container {
-  height: 180px;
+  position: relative;
+  padding: 0 0 50% 0;
   overflow: hidden;
 }
 
 .ill {
-  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: top;
      object-position: top;
   width: 100%;
   height: 100%;
+  min-width: 100px;
+  min-height: 100px;
 }
 
 .text-container .text {
@@ -219,6 +223,7 @@ h2.title {
 .main_content .img-container {
   margin-right: 30px;
   flex: 1 0 200px;
+  padding: 0;
 }
 
 .main_content .info-block ~ .info-block {
@@ -226,7 +231,7 @@ h2.title {
 }
 
 .footer__content {
-  background-color: #005bc1;
+  background-color: #329af0;
   color: #fff;
   font-family: "Open Sans";
   font-weight: 300;
@@ -239,7 +244,7 @@ h2.title {
 .footer__container hr.line {
   border-width: 0;
   height: 1px;
-  background-color: #fff;
+  background-color: #a8a8a8;
 }
 
 .footer .menu__body {
@@ -314,7 +319,7 @@ h2.title {
 
 @media (max-width: 768px) {
   h2.title {
-    font-size: 20px;
+    margin: 20px;
   }
 
   ._container {
@@ -367,8 +372,8 @@ h2.title {
 
 @media (max-width: 480px) {
   h2.title {
+    margin: 20px 0;
     text-align: center;
-    margin-left: 0;
   }
 
   ._container {
@@ -487,6 +492,23 @@ h2.title {
 
   .info-block__container .info-block ~ .info-block {
     margin-left: 0;
+  }
+
+  .main_content .info-block {
+    flex-wrap: wrap;
+  }
+
+  .main_content .img-container {
+    height: 200px;
+    margin-right: 0;
+  }
+
+  .main_content .info-block ~ .info-block {
+    margin-top: 0px;
+  }
+
+  .main_content .ill {
+    position: static;
   }
 
   .contacts {
