@@ -3,17 +3,8 @@
 @import url('/src/scss/normalize.css');
 
 @import 'mixins/adaptive-value';
+@import 'support/variables';
 
-$fontFamily:"Oswald";
-$SecondFontFamily: "Open Sans";
-
-$minWidth: 320px;
-$maxWidth: 1920;
-$maxWidthContainer: 1110;
-$md1: $maxWidthContainer + 12;
-$md2: 992;
-$md3: 768;
-$md4: 480;
 // ---------------main-components-styles-----------------------//
 body{
 box-sizing: border-box;

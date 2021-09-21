@@ -216,6 +216,10 @@ h2.title {
   font-size: calc(12px + 4 * ((100vw - 320px) / 1600));
 }
 
+.main_content__header {
+  margin: 0;
+}
+
 .main_content .info-block {
   display: flex;
 }

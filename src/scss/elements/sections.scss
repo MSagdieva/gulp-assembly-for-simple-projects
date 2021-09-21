@@ -50,6 +50,9 @@
 }
 }
 .main_content{
+    &__header{
+        margin:0;
+    }
     .info-block{
         display:flex;
         @media (max-width: $md4+px){
