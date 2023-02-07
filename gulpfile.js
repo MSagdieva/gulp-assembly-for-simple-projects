@@ -1,4 +1,15 @@
-const fileinclude = require('gulp-file-include');
+import gulp from 'gulp' // Основной модуль
+import del from 'del';
+import fileinclude from 'gulp-file-include';
+import uglify from 'gulp-uglify';
+import rename from 'gulp-rename';
+import browserSync from 'browser-sync';
+import _Readable from 'readable-stream';
+import sass from 'gulp-sass';
+
+var pipeline= _Readable.pipeline;
+const src = gulp.src;
+const dest = gulp.dest;
 
 let project_folder="dist";
 let source_folder="src";
@@ -26,26 +37,9 @@ let path = {
 },
     clean:"./"+project_folder+"/"
 }
-let {src, dest} = require('gulp'),
-    gulp = require('gulp'),
-    browsersync = require("browser-sync").create(),
-    del = require('del'),
-    autoprefixer = require('gulp-autoprefixer'),
-    group_media = require('gulp-group-css-media-queries'),
-    clean_css = require('gulp-clean-css'),
-    scss = require('gulp-sass'),
-    rename  = require('gulp-rename'),
-    uglify = require('gulp-uglify-es').default,
-    imagemin = require('gulp-imagemin')
-    webp = require('gulp-webp')
-    webphtml = require('gulp-webp-html')
-    ttf2woff = require('gulp-ttf2woff')
-    ttf2woff2 = require('gulp-ttf2woff2')
-    fonter = require('gulp-fonter')
-    prettify = require('gulp-html-prettify');
 
-function browserSync(params){
-    browsersync.init({
+function browserync(params){
+    browserSync.init({
         server:{ baseDir: "./"+project_folder+"/"
         },
         port:3000,
@@ -66,7 +60,7 @@ function html(){
 
 function css(){
     return src(path.src.scss)
-    .pipe(scss({
+    .pipe(sass({
         outputStyle:"expanded"
     })
         )
@@ -85,16 +79,24 @@ function css(){
     .pipe(browsersync.stream())
 }
 
+
+gulp.task('compress', function () {
+    return pipeline(
+          gulp.src(path.build.js),
+          uglify(),
+          gulp.dest(path.build.js)
+    );
+  });
+
 function js(){
     return src(path.src.js)
     .pipe(fileinclude())
     .pipe(dest(path.build.js))
-    .pipe(uglify())
     .pipe(rename({
         extname: '.min.js'
     }))
     .pipe(dest(path.build.js))
-    .pipe(browsersync.stream())
+    .pipe(browserSync.stream())
 }
 
 function images(){
@@ -129,25 +131,21 @@ function watchFiles(params){
     gulp.watch([path.watch.js],js)
     gulp.watch([path.watch.img],images)
 }
-function clean(params){
+function clean(){
 return del(path.clean);
 }
 
-gulp.task('otf2ttf', function(){
-    return src(['src/fonts/*.otf'])
-    .pipe(fonter({
-        formats: ['ttf']
-    }))
-    .pipe(dest('src/fonts'));
-})
+// gulp.task('otf2ttf', function(){
+//     return src(['src/fonts/*.otf'])
+//     .pipe(fonter({
+//         formats: ['ttf']
+//     }))
+//     .pipe(dest('src/fonts'));
+// })
 
-let build=gulp.series(clean, gulp.parallel(js, css, fonts, html, images));
-let watch=gulp.parallel(build, watchFiles, browserSync);
-        exports.css = css;        
-        exports.html = html;
-        exports.js = js;
-        exports.images = images;
-        exports.fonts = fonts;       
-        exports.build = build;   
-        exports.watch = watch;
-        exports.default = watch;
+const dev = gulp.series(clean, gulp.parallel(js, css, fonts, html, images));
+// Выполнение сценария по умолчанию
+gulp.task('default', dev);
+// let build=gulp.series(clean, gulp.parallel(js, css, fonts, html, images));
+// let watch=gulp.parallel(build, watchFiles, browserSync);
+// export { build, watch }

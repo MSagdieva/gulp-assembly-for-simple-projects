@@ -1,4 +1,4 @@
-let menu = document.querySelector('.menu__list');
+let menu=document.querySelector('.menu__list');
 let burger = document.getElementsByClassName('menu__burger-icon')[0];
 window.addEventListener('click', function(e){
     let target2 = e.target;
@@ -7,4 +7,3 @@ window.addEventListener('click', function(e){
         menu.classList.toggle('active');
 
     }});
-
