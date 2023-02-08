@@ -57,7 +57,7 @@ h2.title{
 .btn {
     font-family: $SecondFontFamily;
     font-weight: 600;
-    line-height: 22 / 16 * 100%;
+    line-height: calc(22 / 16) * 100%;
     text-transform: uppercase;
     display: inline-flex;
     text-align: center;
