@@ -10,14 +10,18 @@
             background-position: center;
 
         }
-    &_btn {
-        position:absolute;
-        right:30px;
+    &__btn {
+        position: absolute;
+        right: 30px;
         border: 2px solid rgba(255, 255, 255, 1);
         @include adaptive-value('font-size', 22, 14, 0);
         padding: 15px 40px;
         @media (max-width:$md3+px) {
             padding: 5px 10px;
+        }
+        @media (max-width: $md4+px) {
+            right: 50%;
+            transform: translateX(50%);
         }
     }
 
@@ -43,7 +47,7 @@
         margin: 202px 0 0 140px;
         @media (max-width: $md4+px) {
             margin: 50px 0 0 20px;
-            width:100%;
+            width: 100%;
         }
     }
 

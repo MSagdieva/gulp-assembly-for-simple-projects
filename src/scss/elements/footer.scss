@@ -1,6 +1,6 @@
 .footer{
     &__content{
-        background-color: rgba(50, 154, 240, 1);
+        background-color: #024BD6;
         color:#fff;
         font-family: $SecondFontFamily;
         font-weight: 300;
@@ -76,14 +76,11 @@
     &__text {
         flex-grow: 1;
     }
-    
-
     &__author {
         flex-grow: 1;
         text-align: right;
         @media (max-width: $md4+px){
             text-align: center;
-            margin-top: 20px;
         }
     }
 }

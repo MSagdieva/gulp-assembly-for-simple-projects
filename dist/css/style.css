@@ -34,7 +34,7 @@ h2.title {
   font-size: calc(18px + 8 * ((100vw - 320px) / 1600));
   display: block;
   line-height: 1.8;
-  margin: 30px;
+  margin: 30px 0;
 }
 
 .text {
@@ -138,7 +138,7 @@ h2.title {
   background-size: cover;
 }
 
-.main-heading_btn {
+.main-heading__btn {
   position: absolute;
   right: 30px;
   border: 2px solid rgb(255, 255, 255);
@@ -176,12 +176,11 @@ h2.title {
 }
 
 .section {
-  margin-top: 30px;
+  margin: 30px auto 30px auto;
 }
 
 .info-block__container {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .info-block__container .info-block {
@@ -216,26 +215,30 @@ h2.title {
   font-size: calc(12px + 4 * ((100vw - 320px) / 1600));
 }
 
-.main_content__header {
+.main-content {
+  margin-bottom: 60px;
+}
+
+.main-content__header {
   margin: 0;
 }
 
-.main_content .info-block {
+.main-content .info-block {
   display: flex;
 }
 
-.main_content .img-container {
+.main-content .img-container {
   margin-right: 30px;
   flex: 1 0 200px;
   padding: 0;
 }
 
-.main_content .info-block ~ .info-block {
+.main-content .info-block ~ .info-block {
   margin-top: 30px;
 }
 
 .footer__content {
-  background-color: rgb(50, 154, 240);
+  background-color: #024BD6;
   color: #fff;
   font-family: "Open Sans";
   font-weight: 300;
@@ -365,7 +368,7 @@ h2.title {
     background-position: center;
   }
 
-  .main-heading_btn {
+  .main-heading__btn {
     padding: 5px 10px;
   }
 
@@ -481,6 +484,11 @@ h2.title {
     width: 100%;
   }
 
+  .main-heading__btn {
+    right: 50%;
+    transform: translateX(50%);
+  }
+
   .main-heading__content {
     background: linear-gradient(90deg, rgba(0, 91, 193, 0.6), rgba(0, 91, 193, 0.6) 60%, rgba(0, 0, 0, 0) 60%);
   }
@@ -494,24 +502,37 @@ h2.title {
     font-size: 30px;
   }
 
+  .info-block__container {
+    flex-wrap: wrap;
+  }
+
+  .info-block__container .info-block {
+    flex: initial;
+  }
+
   .info-block__container .info-block ~ .info-block {
     margin-left: 0;
   }
 
-  .main_content .info-block {
+  .main-content {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .main-content .info-block {
     flex-wrap: wrap;
   }
 
-  .main_content .img-container {
+  .main-content .img-container {
     height: 200px;
     margin-right: 0;
   }
 
-  .main_content .info-block ~ .info-block {
+  .main-content .info-block ~ .info-block {
     margin-top: 0px;
   }
 
-  .main_content .ill {
+  .main-content .ill {
     position: static;
   }
 
@@ -537,6 +558,5 @@ h2.title {
 
   .copyright__author {
     text-align: center;
-    margin-top: 20px;
   }
 }
